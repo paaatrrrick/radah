@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import mongoose from 'mongoose';
 import AuthRouter from './routes/auth';
 import ProfileRouter from './routes/profile';
+import DownloadsRouter from './routes/downloads';
 
 
 export default class Api {
@@ -33,17 +34,11 @@ export default class Api {
 
     start(): void {
         mongoose.set('strictQuery', true);
-        mongoose.connect(this.dbUrl, {
-            //@ts-ignore
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-
+        //@ts-ignore
+        mongoose.connect(this.dbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
         const db = mongoose.connection;
         db.on("error", console.error.bind(console, "connection error:"));
-        db.once("open", () => {
-            console.log("🍌 Mongo connection successful");
-        });
+        db.once("open", () => { console.log("🍌 Mongo connection successful")});
 
         const app = express();
         app.use(bodyParser.json(), bodyParser.urlencoded({ extended: false }))
@@ -51,6 +46,7 @@ export default class Api {
         app.use(cookieParser());
         app.use(`/auth`, AuthRouter);
         app.use(`/profile`, ProfileRouter);
+        app.use(`/downloads`, DownloadsRouter);
         app.use(this.error());
 
         let PORT: number | string = process.env.PORT;
