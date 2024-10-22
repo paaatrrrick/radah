@@ -24,9 +24,9 @@ jobs:
         run: cd vm-application/ui && npm install
 
       - name: Build and make the Electron app
-        run: npm run make
+        run: cd vm-application/ui && npm run make
 
       - name: Publish the Electron app
-        run: npm run publish
+        run: cd vm-application/ui && npm run publish
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
