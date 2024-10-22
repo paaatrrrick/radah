@@ -21,7 +21,7 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        run: npm install
+        run: cd vm-application/ui && npm install
 
       - name: Build and make the Electron app
         run: npm run make
