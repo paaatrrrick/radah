@@ -1,0 +1,32 @@
+name: Publish Electron App
+
+on:
+  push:
+    tags:
+      - 'v*'
+    # This ensures the workflow only triggers when files in the "electron-app" directory are updated
+    paths:
+      - 'vm-application/ui/**'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and make the Electron app
+        run: npm run make
+
+      - name: Publish the Electron app
+        run: npm run publish
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
