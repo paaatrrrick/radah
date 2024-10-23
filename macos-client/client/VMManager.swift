@@ -6,7 +6,6 @@ class VMManager: ObservableObject {
     private var windowController: VMWindowController?
     
     func launchVM() {
-        
         guard let bundlePath = Bundle.main.resourcePath else {
             fatalError("Failed to retrieve bundle resource path")
         }

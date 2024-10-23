@@ -16,11 +16,6 @@
 			path = client;
 			sourceTree = "<group>";
 		};
-		F6C0DCC92CBB4F1300FF061C /* bundles */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = bundles;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +32,6 @@
 		F6C0DCA02CBB4D8D00FF061C = {
 			isa = PBXGroup;
 			children = (
-				F6C0DCC92CBB4F1300FF061C /* bundles */,
 				F6C0DCAB2CBB4D8D00FF061C /* client */,
 				F6C0DCAA2CBB4D8D00FF061C /* Products */,
 			);
@@ -68,7 +62,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F6C0DCAB2CBB4D8D00FF061C /* client */,
-				F6C0DCC92CBB4F1300FF061C /* bundles */,
 			);
 			name = client;
 			packageProductDependencies = (

@@ -7,6 +7,9 @@ Constants that point to the various file URLs that the sample code uses.
 
 import Foundation
 
+let radahServerURL: String = "https://radah-production.up.railway.app"
+
+let serverOSDownloadPath : String = radahServerURL + "/downloads/macos-path"
 
 let vmBundlePath = NSHomeDirectory() + "/VM.bundle/"
 
@@ -20,6 +23,6 @@ let hardwareModelURL = vmBundleURL.appendingPathComponent("HardwareModel")
 
 let machineIdentifierURL = vmBundleURL.appendingPathComponent("MachineIdentifier")
 
-let restoreImageURL = vmBundleURL.appendingPathComponent("RestoreImage.ipsw")
+//let restoreImageURL = vmBundleURL.appendingPathComponent("RestoreImage.ipsw")
 
 let saveFileURL = vmBundleURL.appendingPathComponent("SaveFile.vzvmsave")

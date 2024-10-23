@@ -29,4 +29,4 @@ jobs:
       - name: Publish the Electron app
         run: cd vm-application/ui && npm run publish
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

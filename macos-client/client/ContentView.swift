@@ -12,10 +12,14 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Button("Download OS") {
+                DownloadOS.download()
+            }
             Button("Launch Virtual Machine") {
                 vmManager.launchVM()
             }
             .padding()
+            
         }
         .frame(width: 400, height: 300)
         .padding()
